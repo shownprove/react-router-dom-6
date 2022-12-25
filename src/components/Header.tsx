@@ -1,14 +1,21 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+  const onHomeClick = () => {
+    navigate("/");
+  };
+  const onAboutClick = () => {
+    navigate("/about");
+  };
   return (
     <header>
       <ul>
         <li>
-          <Link to={"/"}>Home</Link>
+          <button onClick={onHomeClick}>Home</button>
         </li>
         <li>
-          <Link to={"/about"}>About</Link>
+          <button onClick={onAboutClick}>About</button>
         </li>
       </ul>
     </header>
