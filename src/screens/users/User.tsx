@@ -1,5 +1,14 @@
+import { useParams } from "react-router-dom";
+import { users } from "../../db";
+
 function User() {
-  return <h1>user</h1>;
+  const { userId } = useParams();
+  return (
+    <div>
+      <h1>userId : {userId}</h1>
+      <h2>userName : {users[Number(userId) - 1].name}</h2>
+    </div>
+  );
 }
 
 export default User;
